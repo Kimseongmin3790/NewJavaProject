@@ -2,7 +2,7 @@ package Day7_Practice;
 
 import java.util.Arrays;
 
-public class ArrayFunc {
+public class ArrayFunc1 {
 	
 	static int maxArr(int arr[]) {
 		int max = 0; // arr[0]

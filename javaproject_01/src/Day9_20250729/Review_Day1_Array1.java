@@ -1,5 +1,7 @@
 package Day9_20250729;
 
+import java.util.Arrays;
+
 public class Review_Day1_Array1 {
 
 	public static void main(String[] args) {
@@ -12,27 +14,23 @@ public class Review_Day1_Array1 {
 			System.out.println("점수 : " + scoreArr[i]);
 		}
 		
-//		int arr[] = new int[3]; // {0, 0, 0}
+		int arr[] = new int[3]; // {0, 0, 0}
 		
 		// 점수가 평균을 넘는 과목들을 출력
 		// 결과 : 평균이 넘는 과목은 java, javascript, jsp 입니다.
 		int sum = 0;
-		for(int i=0; i<scoreArr.length; i++) {
-			sum += scoreArr[i];
+		for(int i : scoreArr) {
+			sum += i;
 		}
-		int num = sum/scoreArr.length;
-
-		int count = 0;
+		int num = sum/scoreArr.length; // 평균
+		
+		System.out.print("평균이 넘는 과목은 "); // String strArr[] = "";
 		for(int j=0; j<scoreArr.length; j++) {
 			if (scoreArr[j] > num) {
-				int temp = j;
-				count++;
+				System.out.print(subjectarr[j] + " "); // subStr += subjectArr[i] + " " ;
 			}
 		}
-		int arr[] = new int[count];
-		
-		System.out.println("결과 : 평균이 넘는 과목은 " + subjectarr[n] + subjectarr[n] 
-				+ subjectarr[n] + " 입니다");
+		System.out.println("입니다");
 	}
 
 }
