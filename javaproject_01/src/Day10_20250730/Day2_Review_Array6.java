@@ -58,7 +58,19 @@ public class Day2_Review_Array6 {
 		System.out.println(Arrays.toString(arr3[i]));	
 		}
 		
+//		arr3[0][3] 값과
+//		arr3[2][1] 값이 중복될경우
+//		다시 랜덤한 값을 부여하도록
 		
+//		for (int i = 0; i<arr2.length; i++) {
+//			arr2[i] = ran.nextInt(end-start+1) + (start); 
+//			for (int j=0; j<i; j++) {
+//				if (arr2[i] == arr2[j]) {
+//					i--;
+//					break;
+//				}
+//			}
+//		}
 	}
 
 }

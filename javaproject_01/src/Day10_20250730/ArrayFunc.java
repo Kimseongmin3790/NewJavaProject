@@ -5,6 +5,12 @@ import java.util.Random;
 
 public class ArrayFunc {
 	
+	public static final int EVEN = 0;
+	public static final int ODD = 1;
+	
+	// 객체 생성 불가능하도록 생성자를 private로 선언
+	private ArrayFunc () {}
+	
 	// 배열의 모든 값을 음수로 만드는 메소드
 	// parameter1 : 정수형 배열
 	public static void minusArr(int arr[]) {
@@ -96,7 +102,6 @@ public class ArrayFunc {
 	// ** kind에 odd,even 외에 값에 대한 예외처리 필요 **
 	public static int arrLength(int arr[], String kind) {
 		
-		
 		int Count = 0;
 //		int oddCount = 0;
 		int num = kind.equals("odd") ? 1 : 0;
@@ -176,4 +181,28 @@ public class ArrayFunc {
 		
 	}
 	
+	// 배열 내의 홀수(odd), 짝수(even)의 개수를 리턴해주는 메소드
+		// parameter1 : 정수형 배열
+		// parameter2 : 홀수, 짝수 구분 문자열(odd or even)
+		// ** kind에 0,1 외에 값에 대한 예외처리 필요 **
+		public static int arrLength(int arr[], int kind) {
+			
+			int Count = 0;
+//			int oddCount = 0;
+			int num = kind == 0 ? 0 : 1;
+			for (int i=0; i<arr.length; i++) {
+				if (arr[i] % 2 == num) {
+					Count++;
+				}
+			}	
+//			
+//			if (odd.equals("odd")) {
+//				return oddCount;
+//			} else if (odd.equals("even")){
+//				return evenCount;
+//			} else {
+//				return 0;
+//			}
+			return Count;
+		}
 }	
