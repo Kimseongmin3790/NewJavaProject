@@ -4,8 +4,7 @@ public class EBook extends Book{
 	private double fileSize;
 	
 	public EBook () {
-		super();
-		this.fileSize = 0.0;
+		this("Unknown", "Unknown", 0.0);
 	}
 	
 	public EBook(String title, String author, double fileSize) {
@@ -23,6 +22,7 @@ public class EBook extends Book{
 	}
 	
 	public void printInfo() {
-		System.out.println(getTitle() + " - " + getAuthor() + ", 파일 크기: " + fileSize + "MB");
+		System.out.println(getTitle() + " - " + getAuthor() + 
+				", 파일 크기: " + fileSize + "MB");
 	}
 }

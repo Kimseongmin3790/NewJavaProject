@@ -1,7 +1,7 @@
 package Day11_Practice;
 
 public class GamingLaptop extends Laptop{
-	String Gcard;
+	private String Gcard;
 
 	public GamingLaptop(String brand, double kg, String Gcard) {
 		super(brand, kg);
@@ -10,6 +10,10 @@ public class GamingLaptop extends Laptop{
 	
 	@Override
 	public void printSpecs() {
-		System.out.println(getBrand() + " 브랜드의 " + getKg() + "kg " + Gcard + " 게이밍 노트북");
+		System.out.println(getBrand() + " 브랜드의 " + getKg() + "kg " + getGcard() + " 게이밍 노트북");
+	}
+
+	public String getGcard() {
+		return Gcard;
 	}
 }
