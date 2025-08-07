@@ -1,4 +1,4 @@
-package Day15_Pratice;
+package Day15_Practice;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package Day15_Pratice;
+package Day15_Practice;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -23,7 +23,7 @@ public class TestQuiz6 {
 		
 		for (int i = 0; i < arr.length; i++) {
 			int ranNum = ran.nextInt(10) + 1;
-			if (map.containsKey(ranNum)) {
+			if (map.containsKey(ranNum)) { // map에 있는 키값과 괄호안에 값이 일치하면 조건문 실행(중복값 찾기)
 				map.put(ranNum, map.get(ranNum) + 1);
 				arr[i] = ranNum;
 				continue;
@@ -37,8 +37,8 @@ public class TestQuiz6 {
 				max = map.get(Num);
 			}
 		}
-		
-		for (int Num : map.keySet()) {
+		// 향상된 for문 => Num에 KeySet을 하나씩 대입
+		for (int Num : map.keySet()) { // keySet함수 => map의 모든 key들을 가져옴
 			if (max == map.get(Num)) {
 				System.out.println("가장 많은 수 : " + Num + ", 개수 : " + max);
 			}

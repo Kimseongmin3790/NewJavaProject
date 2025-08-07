@@ -1,4 +1,4 @@
-package Day15_Pratice;
+package Day15_Practice;
 
 public class StringEx {
 
