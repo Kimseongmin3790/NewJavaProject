@@ -1,23 +1,20 @@
 package Day16_20250807;
 
 import java.awt.Container;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.*;
 
-public class MouseListenerEx extends JFrame{
+public class MouseListenerEx extends JFrame {
 	private JLabel la = new JLabel("Hello");
 
 	public MouseListenerEx() {
-		setTitle ("Mouse 이벤트 예제");
+		setTitle("Mouse 이벤트 예제");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Container c = getContentPane();
-		c.addMouseListener(new MouseListener() {
-			
-			@Override
-			public void mouseReleased(MouseEvent e) {}
-			
+		c.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				int x = e.getX();
@@ -25,17 +22,9 @@ public class MouseListenerEx extends JFrame{
 				la.setLocation(x, y);
 			}
 			
-			@Override
-			public void mouseExited(MouseEvent e) {}
-			
-			@Override
-			public void mouseEntered(MouseEvent e) {}
-			
-			@Override
-			public void mouseClicked(MouseEvent e) {}
 		});
 
-		c.setLayout(null);
+		c.setLayout(null); // 컴포넌트들의 위치를 따로 지정하지 않음. setLocation으로 지정필요
 		la.setSize(50, 20);
 		la.setLocation(30, 30);
 		c.add(la);
@@ -43,8 +32,8 @@ public class MouseListenerEx extends JFrame{
 		setSize(250, 250);
 		setVisible(true);
 	}
-	
-	public static void main(String [] args) {
-		 new MouseListenerEx();
-	 }
+
+	public static void main(String[] args) {
+		new MouseListenerEx();
+	}
 }
