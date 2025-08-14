@@ -13,23 +13,25 @@ public class DB_EX5 {
 		// 단, 아이디 입력시에 이미 테이블에서 사용하는 아이디를 입력할 경우
 		// '이미 사용중인 아이디 입니다' 출력 후 다시 입력받도록 함
 		DBClass db = new DBClass();
-		
+
 		Scanner s = new Scanner(System.in);
-		
+
 //		System.out.print("아이디를 입력하세요 : ");
 //		String userId = s.next();
 //		ResultSet rs = db.stmt.executeQuery("SELECT * FROM TBL_USER WHERE USERID = '" + userId + "'");
 		String userId = "";
-//		boolean idCheck = true;
-//		while(idCheck) {
-//			System.out.print("아이디를 입력하세요 : ");
-//			userId = s.next();
-//			ResultSet rs = db.stmt.executeQuery("SELECT * FROM TBL_USER WHERE USERID = '" + userId + "'");
-//			idCheck = rs.next(); => 입력한 값이 존재하면 true(다시 입력받도록) 없으면 false(빠져나가도록) 리턴
-//			if(rs.next) => 입력한값이 존재하면 실행
-//				{ "다시 입력하세요"}
-//			else {break} => 입력한값이 존재하지 않으면 실행
-//		}
+		boolean idCheck = true;
+		while (idCheck) {
+			System.out.print("아이디를 입력하세요 : ");
+			userId = s.next();
+			ResultSet rs = db.stmt.executeQuery("SELECT * FROM TBL_USER WHERE USERID = '" + userId + "'");
+			idCheck = rs.next(); // => 입력한 값이 존재하면 true(다시 입력받도록) 없으면 false(빠져나가도록) 리턴
+			if (rs.next()) { // => 입력한값이 존재하면 실행
+				System.out.println("다시 입력하세요");
+			} else {
+				break;
+			} // => 입력한값이 존재하지 않으면 실행
+		}
 		System.out.print("비밀번호를 입력하세요 : ");
 		String userPw = s.next();
 		System.out.print("이름을 입력하세요 : ");
@@ -38,8 +40,9 @@ public class DB_EX5 {
 		String userMf = s.next();
 		System.out.print("나이를 입력하세요 : ");
 		int userAge = s.nextInt();
-		
-		String sql = "INSERT TBL_USER VALUES ('" + userId + "', '" + userPw + "', '" + userName + "', '" + userMf + "', '" + userAge + "', " + "SYSDATE" + ")";
+
+		String sql = "INSERT TBL_USER VALUES ('" + userId + "', '" + userPw + "', '" + userName + "', '" + userMf
+				+ "', '" + userAge + "', " + "SYSDATE" + ")";
 		int num = db.stmt.executeUpdate(sql);
 		if (num > 0) {
 			System.out.println("가입되었습니다.");
@@ -57,7 +60,7 @@ public class DB_EX5 {
 //				{ "다시 입력하세요"}
 //			else {break} => 입력한값이 존재하지 않으면 실행
 //		}
-		
+
 	}
 
 }
